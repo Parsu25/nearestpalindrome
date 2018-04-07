@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main() 
+{
+   int x;
+   scanf("%d",&x);
+   palindrome(x);
+}
+int palindrome(int x)
+{
+   int i,f=0,rev;
+   for(i=x+1;f==0;i++)
+   {
+      rev=reverse(i);
+      if(i==rev)
+      {
+      printf("%d",rev);
+      f++;
+      }
+   }
+}
+int reverse(int i)
+{
+    int r,revnum=0;
+    while(i>0)
+    {
+        r=i%10;
+        revnum=(revnum*10)+r;
+        i=i/10;
+    }
+    return revnum;
+}
